@@ -11,7 +11,7 @@
 		<link rel="stylesheet" href="assets/css/noscript.css" />
 	</noscript>
 
-</head ><a id="subir"></a>
+</head><a id="subir"></a>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RZGQYG0Z3B"></script>
 <script>
@@ -60,7 +60,7 @@
 			</article>
 
 			<!-- Work -->
-			<article id="work" class="panel"> 
+			<article id="work" class="panel">
 
 				<header>
 					<h2>Proyectos Full Stack PHP</h2>
@@ -115,7 +115,7 @@
 						<div class="col-12 col-12-medium col-12-small">
 							<a class="image fit"><img src="images/pic12.jpg" alt=""></a>
 						</div>
-						
+
 					</div>
 				</section>
 				<header>
@@ -138,12 +138,14 @@
 							<a class="image fit"><img src="images/pic22.png" alt=""></a>
 						</div>
 						<div class="col-12 col-12-medium col-12-small">
-							<a class="image fit" href="https://proyectopicada.netlify.app/" target="_blank"><img src="images/pic13.png" alt=""></a>
-							
+							<a class="image fit" href="https://proyectopicada.netlify.app/" target="_blank"><img
+									src="images/pic13.png" alt=""></a>
+
 						</div>
 						<div class="col-12 col-12-medium col-12-small">
-							<a class="image fit" href="https://portfoliojfe.netlify.app/" target="_blank"><img src="images/pic15.png" alt=""></a>
-							
+							<a class="image fit" href="https://portfoliojfe.netlify.app/" target="_blank"><img
+									src="images/pic15.png" alt=""></a>
+
 						</div>
 
 
@@ -233,22 +235,45 @@
 
 
 		</div>
-
+		<article class="padre">
+			<p>Contador de visitas:</p>
+			<span class="website-counter"></span>
+		</article>
 	</div>
-	<div id="sfcxbwz9gd1nxkflj3xmr4sgaztry7x9a65"></div>
-	<script type="text/javascript"
-		src="https://counter11.optistats.ovh/private/counter.js?c=xbwz9gd1nxkflj3xmr4sgaztry7x9a65&down=async"
-		async></script><noscript><a href=""
-			title="contador de visitas para web"><img
-				src=""
-				border="0" title="contador de visitas para web" alt="contador de visitas para web"></a></noscript>
 	
+
+	<!--<button id="reset">Reset</button>-->
+
 	<!-- Scripts -->
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/browser.min.js"></script>
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
+
+	<script>
+		var counterContainer = document.querySelector(".website-counter");
+		var resetButton = document.querySelector("#reset");
+		var visitCount = localStorage.getItem("page_view");
+
+		// Check if page_view entry is present
+		if (visitCount) {
+			visitCount = Number(visitCount) + 1;
+			localStorage.setItem("page_view", visitCount);
+		} else {
+			visitCount = 1;
+			localStorage.setItem("page_view", 1);
+		}
+		counterContainer.innerHTML = visitCount;
+
+		// Adding onClick event listener
+		resetButton.addEventListener("click", () => {
+			visitCount = 1;
+			localStorage.setItem("page_view", 1);
+			counterContainer.innerHTML = visitCount;
+		});
+
+	</script>
 
 
 </body>
